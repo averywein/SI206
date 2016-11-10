@@ -16,12 +16,6 @@ if debug:
 	print ("Getting information from file madlib_test.txt...\n")
 
 tokens = text2[0:150]
-print("START*******")
-
-
-print("\n\nEND*******")
-
-#HELP
 
 # print("TOKENS")
 # print(tokens)
@@ -44,6 +38,7 @@ def spaced(word):
 
 final_words = []
 
+print("START*******")
 
 for (word, tag) in tagged_tokens:
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
@@ -69,9 +64,9 @@ soup = BeautifulSoup(r.text, 'html.parser')
 word = soup.find_all('p')
 for elt in word:
 	element = elt.text
-	paragraph = re.findall('\\bstudent\\b', element)
+	paragraph = re.findall('student', element)
 	print (paragraph)
-	element = re.sub('\\bstudent\\b', 'AMAZING student', element)
+	element = re.sub('student', 'AMAZING student', element)
 	print (element)
 
 link = soup.find_all('img')
@@ -133,10 +128,14 @@ for tweet in public_tweets:
 	original2 = analysis.sentiment.subjectivity
 	accum2 += original2
 total = accum2/accum
-print (total)
 total2 = accum3/accum
+
+print("Average subjectivity is")
+print (total)
+print("Average polarity is")
 print (total2)
 
+print("\n\nEND*******")
 
 
 
