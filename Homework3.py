@@ -16,6 +16,13 @@ if debug:
 	print ("Getting information from file madlib_test.txt...\n")
 
 tokens = text2[0:150]
+print("START*******")
+
+
+print("\n\nEND*******")
+
+#HELP
+
 
 # print("TOKENS")
 # print(tokens)
@@ -27,7 +34,7 @@ if debug:
 	for tup in tagged_tokens[:5]:
 		print (tup)
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "PRP$": "pronoun"}
+tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "PRP$":"pronoun"}
 substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1, "PRP$":.1}
 
 def spaced(word):
@@ -91,3 +98,48 @@ f.write(result)
 f.close()
 
 #Part C
+import tweepy
+from textblob import TextBlob
+
+# Unique code from Twitter
+access_token = "791353066612224000-8X2ZLy6ZXe0Hcs0Yet5Rw0jYCi3i96e"
+access_token_secret = "FtJzRNSTabKedppBg7P25loeF08emDPXFf3dNRwlY3dd6"
+consumer_key = "dPHhI8kGXbWv3zZcWGlQD1Ebx"
+consumer_secret = "QomDeBs0IlKRP5MPTdiUwBx1mBV8Ynl74NDowuj3OyQp4XFGQe"
+
+# Boilerplate code here
+auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token,access_token_secret)
+
+api = tweepy.API(auth)
+#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
+
+img = "/Users/averywein/Desktop/picture.jpg"
+api.update_with_media(img, status="Coding is fun! I love gamedays! #UMSI-206 #Proj3")
+
+
+public_tweets = api.search('Go Blue!')
+
+accum = 0
+accum2 = 0
+accum3 = 0
+
+for tweet in public_tweets:
+	print(tweet.text)
+	accum += 1
+	analysis = TextBlob(tweet.text)
+	print(analysis.sentiment)
+	original = analysis.sentiment.polarity
+	accum3 += original
+	original2 = analysis.sentiment.subjectivity
+	accum2 += original2
+total = accum2/accum
+print (total)
+total2 = accum3/accum
+print (total2)
+
+
+
+
+
+
