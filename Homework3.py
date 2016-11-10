@@ -17,11 +17,11 @@ if debug:
 
 tokens = text2[0:150]
 
-print("TOKENS")
-print(tokens)
+# print("TOKENS")
+# print(tokens)
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
+# print("TAGGED TOKENS")
+# print(tagged_tokens)
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:
