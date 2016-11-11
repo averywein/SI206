@@ -3,11 +3,14 @@
 import nltk # requires some downloading/installing dependencies to use all its features; numpy is especially tricky to install
 import random
 
+print("START*******")
+
 # import nltk
 nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
 from nltk.book import text2
+
 
 debug = False #True
 
@@ -38,7 +41,6 @@ def spaced(word):
 
 final_words = []
 
-print("START*******")
 
 for (word, tag) in tagged_tokens:
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
@@ -48,6 +50,8 @@ for (word, tag) in tagged_tokens:
 		final_words.append(spaced(new_word))
 
 print ("".join(final_words))
+
+print("\n\nEND*******")
 
 #Part B
 import requests
@@ -60,14 +64,13 @@ r = requests.get(base_url)
 soup = BeautifulSoup(r.text, 'html.parser')
 
 
-
-word = soup.find_all('p')
-for elt in word:
-	element = elt.text
-	paragraph = re.findall('student', element)
-	print (paragraph)
-	element = re.sub('student', 'AMAZING student', element)
-	print (element)
+# word = soup.find_all('p')
+# for elt in word:
+# 	element = elt.text
+# 	paragraph = re.findall('student', element)
+# 	print (paragraph)
+# 	element = re.sub('student', 'AMAZING student', element)
+# 	print (element)
 
 link = soup.find_all('img')
 
@@ -87,8 +90,12 @@ for a in link:
 
 result = str(soup)
 
+element = soup.prettify()
+htmlcode = re.sub('student', 'AMAZING student', element)
+htmlcode = re.sub ('students', 'AMAZING students', element)
+
 f = open("project.html", "w")
-f.write(result)
+f.write(htmlcode)
 f.close()
 
 #Part C
@@ -135,7 +142,7 @@ print (total)
 print("Average polarity is")
 print (total2)
 
-print("\n\nEND*******")
+
 
 
 
