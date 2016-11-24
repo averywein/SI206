@@ -57,9 +57,6 @@
 # 	window.loadpacman()
 
 
-
-
-
 import sys, pygame
 pygame.init()
 
