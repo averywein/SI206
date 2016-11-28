@@ -46,12 +46,10 @@
 # #         image.set_colorkey(colorkey, RLEACCEL)
 # #     return image, image.get_rect()
 
-
 # if __name__ == "__main__":
 # 	window = start()
 # 	window.exitgame()
 # 	window.loadpacman()
-
 
 import sys, pygame
 pygame.init()
