@@ -32,8 +32,6 @@
 # 		self.pellets = 0
 
 
-
-
 # # def load_image(name, colorkey=None): #source: stackoverflow
 # #     fullname = os.path.join('images', name)
 # #     try:
@@ -47,8 +45,6 @@
 # #             colorkey = image.get_at((0,0))
 # #         image.set_colorkey(colorkey, RLEACCEL)
 # #     return image, image.get_rect()
-	
-
 
 
 # if __name__ == "__main__":
