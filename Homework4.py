@@ -58,6 +58,7 @@ size = width, height = 640, 480
 
 black = 0, 0, 0
 blue = (0,0,255)
+white = (255, 255, 255)
 
 screen = pygame.display.set_mode(size)
 
@@ -72,6 +73,7 @@ while 1:
         
     screen.fill(black)
     movement(5, 5)
+    #board
     pygame.draw.rect(screen, blue, (0,0,640,480), 5)
     pygame.draw.lines(screen, blue, True, [(213, 0), (213, 100)], 5)
     pygame.draw.lines(screen, blue, True, [(426, 0), (426, 100)], 5)
@@ -94,7 +96,49 @@ while 1:
     pygame.draw.lines(screen, blue, True, [(265, 200), (265, 280)], 5)
     pygame.draw.lines(screen, blue, True, [(265, 280), (374, 280)], 5)
     pygame.draw.lines(screen, blue, True, [(374, 200), (374, 280)], 5)
+    #dots
+    #left down
+    pygame.draw.circle(screen, white, (45, 50), 8, 0)
+    pygame.draw.circle(screen, white, (45, 100), 8, 0)
+    pygame.draw.circle(screen, white, (45, 150), 8, 0)
+    pygame.draw.circle(screen, white, (45, 200), 8, 0)
+    pygame.draw.circle(screen, white, (45, 250), 8, 0)
+    pygame.draw.circle(screen, white, (45, 300), 8, 0)
+    pygame.draw.circle(screen, white, (45, 350), 8, 0)
+    pygame.draw.circle(screen, white, (45, 400), 8, 0)
+    pygame.draw.circle(screen, white, (45, 450), 8, 0)
+    #left right
+    pygame.draw.circle(screen, white, (89, 50), 8, 0)
+    pygame.draw.circle(screen, white, (135, 50), 8, 0)
+    pygame.draw.circle(screen, white, (179, 50), 8, 0)
+    pygame.draw.circle(screen, white, (179, 100), 8, 0)
+    pygame.draw.circle(screen, white, (179, 150), 8, 0)
+    pygame.draw.circle(screen, white, (135, 150), 8, 0)
+    pygame.draw.circle(screen, white, (135, 200), 8, 0)
+    pygame.draw.circle(screen, white, (135, 250), 8, 0)
+    pygame.draw.circle(screen, white, (135, 300), 8, 0)
+    pygame.draw.circle(screen, white, (135, 350), 8, 0)
+    pygame.draw.circle(screen, white, (89, 250), 8, 0)
+    pygame.draw.circle(screen, white, (89, 450), 8, 0)
+    pygame.draw.circle(screen, white, (135, 450), 8, 0)
+    pygame.draw.circle(screen, white, (179, 450), 8, 0)
+    pygame.draw.circle(screen, white, (179, 400), 8, 0)
+    pygame.draw.circle(screen, white, (179, 350), 8, 0)
+    pygame.draw.circle(screen, white, (179, 300), 8, 0)
+    pygame.draw.circle(screen, white, (179, 250), 8, 0)
+    pygame.draw.circle(screen, white, (220, 150), 8, 0)
+    pygame.draw.circle(screen, white, (260, 150), 8, 0)
+    pygame.draw.circle(screen, white, (300, 150), 8, 0)
+    pygame.draw.circle(screen, white, (340, 150), 8, 0)
+    pygame.draw.circle(screen, white, (380, 150), 8, 0)
+    pygame.draw.circle(screen, white, (420, 150), 8, 0)
+    pygame.draw.circle(screen, white, (460, 150), 8, 0)
+    pygame.draw.circle(screen, white, (500, 150), 8, 0)
+    
+
+
     pygame.display.update()
+
 
     # screen.blit(ball, ballrect)
     # pygame.display.flip()
