@@ -16,8 +16,7 @@
 #     			if action.type == pygame.QUIT:
 #     				sys.exit()
 #     		# self.snake_sprites.draw(self.screen)
-#     		# pygame.display.flip()
-            
+#     		# pygame.display.flip()         
             
 #     def loadpacman(self):
 #     	# self.pacman = pacman()
@@ -30,7 +29,6 @@
 # 		pygame.sprite.Sprite.__init__(self)
 # 		# self.image, self.rect = pygame.image.load('pacman.png')
 # 		self.pellets = 0
-
 
 # # def load_image(name, colorkey=None): #source: stackoverflow
 # #     fullname = os.path.join('images', name)
